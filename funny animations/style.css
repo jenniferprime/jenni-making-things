@@ -1,0 +1,99 @@
+/*Disable Browser annoyances*/
+.material-textbox {
+    border: none;
+}
+
+.material-textbox:focus {
+    outline: none;
+}
+
+* {
+    font-family: Roboto, sans-serif;
+}
+
+/*somewhat sane defaults*/
+.material-textbox::placeholder {
+    color: #FFF;
+}
+
+/*border line on bottom*/
+.material-textbox+hr {
+    position: absolute;
+    left: 1.2rem;
+    top: 2.2rem;
+    color: red;
+    width: 13.225rem;
+    border: 1px solid #aaa;
+    z-index: 11;
+}
+
+.material-textbox:focus+hr {
+    border: 1px solid #ec4c2d;
+}
+
+.material-input-element {
+
+}
+
+.material-textbox {
+    background-color: #FFF;
+    color: #333;
+
+    height: 1rem;
+    width: 15.625rem;
+    padding: 1rem;
+    border-radius: 5px;
+
+    position: absolute;
+    top:5px;
+    left: 5px;
+    z-index: 10;
+
+    /*border-radius: 0px;*/
+    /*border-bottom: #aaa 3px solid;*/
+
+}
+
+.material-textbox-label {
+    position: absolute;
+    left: 1.2rem;
+    top: 0.5rem;
+    z-index: 20;
+    line-height: 8pt;
+    font-size: 8pt;
+    /*font-size: 12pt;*/
+
+    transition:
+            transform 0.1s ease-in-out,
+            color 0.1s ease-in-out,
+            font-size 0.1s ease-in-out
+            ;
+
+    color: #333;
+
+
+    transform-origin: 0 100%;
+}
+
+
+
+.material-textbox:focus {
+    /*border-bottom: #ec4c2d 2px solid;*/
+}
+
+
+
+.material-textbox-label:has(+.material-textbox:placeholder-shown) {
+    /*left: 1.2rem;*/
+    /*top: 0.5rem;*/
+    font-size: 12pt;
+    color: #aaa;
+    transform: translateY(12px);
+}
+
+.material-textbox-label:has(+.material-textbox:focus) {
+    font-size: 8pt;
+    /*top: -0.3rem;*/
+    color: #ec4c2d;
+    transform: translateY(0px);
+}
